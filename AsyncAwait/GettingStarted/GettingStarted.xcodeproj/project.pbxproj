@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0265EB90292C459800C955E3 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0265EB8F292C459800C955E3 /* WebService.swift */; };
 		02754A10292BBFE40078C269 /* GettingStartedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02754A0F292BBFE40078C269 /* GettingStartedApp.swift */; };
 		02754A12292BBFE40078C269 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02754A11292BBFE40078C269 /* ContentView.swift */; };
 		02754A14292BBFE50078C269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02754A13292BBFE50078C269 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0265EB8F292C459800C955E3 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		02754A0C292BBFE40078C269 /* GettingStarted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettingStarted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02754A0F292BBFE40078C269 /* GettingStartedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStartedApp.swift; sourceTree = "<group>"; };
 		02754A11292BBFE40078C269 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				02754A0F292BBFE40078C269 /* GettingStartedApp.swift */,
 				02754A11292BBFE40078C269 /* ContentView.swift */,
+				0265EB8F292C459800C955E3 /* WebService.swift */,
 				02754A13292BBFE50078C269 /* Assets.xcassets */,
 				02754A15292BBFE50078C269 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0265EB90292C459800C955E3 /* WebService.swift in Sources */,
 				02754A12292BBFE40078C269 /* ContentView.swift in Sources */,
 				02754A10292BBFE40078C269 /* GettingStartedApp.swift in Sources */,
 			);
