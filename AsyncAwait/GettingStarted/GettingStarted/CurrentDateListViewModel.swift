@@ -4,7 +4,7 @@ import Foundation
 final class CurrentDateListViewModel: ObservableObject {
     @Published var currentDates: [CurrentDateViewModel] = []
     
-    func populateDates() async throws {
+    func populateDates() async {
         do {
             if let currentDate = try await WebService.shared.getDate() {
                 let currentDateViewModel = CurrentDateViewModel(currentDate: currentDate)
@@ -16,7 +16,7 @@ final class CurrentDateListViewModel: ObservableObject {
     }
 }
 
-struct CurrentDateViewModel {
+struct CurrentDateViewModel: Identifiable {
     let currentDate: CurrentDate
     
     var id: UUID {
