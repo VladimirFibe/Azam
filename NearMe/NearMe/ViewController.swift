@@ -71,11 +71,24 @@ class ViewController: UIViewController {
         case .authorizedAlways, .authorizedWhenInUse:
             let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
             mapView.setRegion(region, animated: true)
+            print("DEBUG: \(region.center)")
         @unknown default:
             print("DEBUG: Unkonwn error. Unable to get location.")
         }
     }
     
+    private func presentPlacesSheet(_ places: [PlaceAnnotation]) {
+        guard let locationManager = locationManager,
+              let userLocation = locationManager.location else { return }
+        
+        let controller = PlacesTableViewController(userLocation: userLocation, places: places)
+        controller.modalPresentationStyle = .pageSheet
+        if let sheet = controller.sheetPresentationController {
+            sheet.prefersGrabberVisible = true
+            sheet.detents = [.medium(), .large()]
+            present(controller, animated: true)
+        }
+    }
     private func findNearbyPlaces(by query: String) {
         #warning("рассмотреть плавное исчезновение старых анотаций")
         mapView.removeAnnotations(mapView.annotations)
@@ -84,9 +97,13 @@ class ViewController: UIViewController {
         request.naturalLanguageQuery = query
         request.region = mapView.region
         let search = MKLocalSearch(request: request)
-        search.start { response, error in
+        search.start {[weak self] response, error in
             guard let response = response, error == nil else { return }
-            print("DEBUG: \(response.mapItems)")
+            let places = response.mapItems.map(PlaceAnnotation.init)
+            places.forEach { place in
+                self?.mapView.addAnnotation(place)
+            }
+            self?.presentPlacesSheet(places)
         }
     }
 }
