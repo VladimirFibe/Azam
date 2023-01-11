@@ -2,9 +2,11 @@ import SwiftUI
 import MapKit
 
 class ViewController: UIViewController {
-
+    
+    var locationManager: CLLocationManager?
+    
     lazy var mapView: MKMapView = {
-//        $0.showsUserLocation = true
+        $0.showsUserLocation = true
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(MKMapView())
@@ -18,11 +20,13 @@ class ViewController: UIViewController {
         $0.leftViewMode = .always
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.returnKeyType = .go
+        $0.delegate = self
         return $0
     }(UITextField())
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupLocation()
         setupUI()
         setupConstraints()
     }
@@ -31,6 +35,14 @@ class ViewController: UIViewController {
         view.addSubview(searchTextField)
         view.addSubview(mapView)
         view.bringSubviewToFront(searchTextField)
+    }
+    
+    func setupLocation() {
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.requestAlwaysAuthorization()
+        locationManager?.requestLocation()
     }
     
     private func setupConstraints() {
@@ -45,6 +57,63 @@ class ViewController: UIViewController {
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: searchTextField.trailingAnchor, multiplier: 1),
             searchTextField.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1)
         ])
+    }
+    
+    private func checkLocationAuthorization() {
+        guard let locationManager = locationManager,
+              let location = locationManager.location else { return }
+        switch locationManager.authorizationStatus {
+            
+        case .notDetermined, .restricted:
+            print("DEBUG: Location cannot be determined or restricted.")
+        case .denied:
+            print("DEBUG: Location services has been denied.")
+        case .authorizedAlways, .authorizedWhenInUse:
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
+            mapView.setRegion(region, animated: true)
+        @unknown default:
+            print("DEBUG: Unkonwn error. Unable to get location.")
+        }
+    }
+    
+    private func findNearbyPlaces(by query: String) {
+        #warning("рассмотреть плавное исчезновение старых анотаций")
+        mapView.removeAnnotations(mapView.annotations)
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        request.region = mapView.region
+        let search = MKLocalSearch(request: request)
+        search.start { response, error in
+            guard let response = response, error == nil else { return }
+            print("DEBUG: \(response.mapItems)")
+        }
+    }
+}
+
+extension ViewController: CLLocationManagerDelegate {
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("DEBUG: \(error.localizedDescription)")
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let text = textField.text ?? ""
+        if !text.isEmpty {
+            textField.resignFirstResponder()
+            findNearbyPlaces(by: text)
+        }
+        return true
     }
 }
 
