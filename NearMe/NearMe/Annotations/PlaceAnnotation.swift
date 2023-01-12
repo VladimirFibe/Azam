@@ -1,10 +1,3 @@
-//
-//  PlaceAnnotation.swift
-//  NearMe
-//
-//  Created by Vladimir Fibe on 1/11/23.
-//
-
 import MapKit
 
 final class PlaceAnnotation: MKPointAnnotation {

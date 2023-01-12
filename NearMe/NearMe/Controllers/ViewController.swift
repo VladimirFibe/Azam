@@ -4,9 +4,10 @@ import MapKit
 class ViewController: UIViewController {
     
     var locationManager: CLLocationManager?
-    
+    private var places: [PlaceAnnotation] = []
     lazy var mapView: MKMapView = {
         $0.showsUserLocation = true
+        $0.delegate = self
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(MKMapView())
@@ -77,7 +78,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private func presentPlacesSheet(_ places: [PlaceAnnotation]) {
+    private func presentPlacesSheet() {
         guard let locationManager = locationManager,
               let userLocation = locationManager.location else { return }
         
@@ -89,6 +90,7 @@ class ViewController: UIViewController {
             present(controller, animated: true)
         }
     }
+    
     private func findNearbyPlaces(by query: String) {
         #warning("рассмотреть плавное исчезновение старых анотаций")
         mapView.removeAnnotations(mapView.annotations)
@@ -103,8 +105,13 @@ class ViewController: UIViewController {
             places.forEach { place in
                 self?.mapView.addAnnotation(place)
             }
-            self?.presentPlacesSheet(places)
+            self?.places = places
+            self?.presentPlacesSheet()
         }
+    }
+    
+    private func clearAllSelections() {
+        places.forEach { $0.isSelected = false}
     }
 }
 
@@ -112,8 +119,7 @@ extension ViewController: CLLocationManagerDelegate {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationAuthorization()
-    }
-    
+    }    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     }
@@ -131,6 +137,16 @@ extension ViewController: UITextFieldDelegate {
             findNearbyPlaces(by: text)
         }
         return true
+    }
+}
+
+extension ViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+        clearAllSelections()
+        guard let selectAnnotation = annotation as? PlaceAnnotation else { return }
+        guard let placeAnnotation = self.places.first(where: { $0.id == selectAnnotation.id }) else { return }
+        placeAnnotation.isSelected = true
+        presentPlacesSheet()
     }
 }
 

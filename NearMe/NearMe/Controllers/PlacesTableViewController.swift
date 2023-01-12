@@ -4,7 +4,11 @@ import MapKit
 class PlacesTableViewController: UITableViewController {
 
     var userLocation: CLLocation
-    let places: [PlaceAnnotation]
+    var places: [PlaceAnnotation]
+    
+    private var indexForSelectedRow: Int? {
+        self.places.firstIndex(where: { $0.isSelected })
+    }
     
     init(userLocation: CLLocation, places: [PlaceAnnotation]) {
         self.userLocation = userLocation
@@ -19,16 +23,9 @@ class PlacesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "PlaceCell")
+        self.places.swapAt(indexForSelectedRow ?? 0, 0)
     }
 
-    // MARK: - Table view data source
-
-    
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-//
     private func calculateDistance(from location1: CLLocation, to location2: CLLocation) -> CLLocationDistance {
         location1.distance(from: location2)
     }
@@ -37,6 +34,7 @@ class PlacesTableViewController: UITableViewController {
         let meters = Measurement(value: distance, unit: UnitLength.meters)
         return meters.converted(to: .miles).formatted()
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         places.count
     }
@@ -48,6 +46,13 @@ class PlacesTableViewController: UITableViewController {
         content.text = place.name
         content.secondaryText = formatDistanceForDisplay(calculateDistance(from: userLocation, to: place.location))
         cell.contentConfiguration = content
+        cell.backgroundColor = place.isSelected ? .lightGray : .clear
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let place = places[indexPath.row]
+        let controller = PlaceDetailViewController(place: place)
+        present(controller, animated: true)
     }
 }
