@@ -45,6 +45,7 @@ class PlacesTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = place.name
         content.secondaryText = formatDistanceForDisplay(calculateDistance(from: userLocation, to: place.location))
+//        content.directionalLayoutMargins.leading = -50
         cell.contentConfiguration = content
         cell.backgroundColor = place.isSelected ? .lightGray : .clear
         return cell
