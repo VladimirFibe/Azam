@@ -14,6 +14,7 @@
 		0254A4612992904700C14B17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0254A45F2992904700C14B17 /* LaunchScreen.storyboard */; };
 		0254A46A2992919700C14B17 /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0254A4682992919700C14B17 /* BudgetModel.xcdatamodeld */; };
 		0254A46C2992973400C14B17 /* AddBudgetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254A46B2992973400C14B17 /* AddBudgetCategoryViewController.swift */; };
+		0254A46E29929F5500C14B17 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254A46D29929F5500C14B17 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		0254A4622992904700C14B17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0254A4692992919700C14B17 /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
 		0254A46B2992973400C14B17 /* AddBudgetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryViewController.swift; sourceTree = "<group>"; };
+		0254A46D29929F5500C14B17 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				0254A4562992904600C14B17 /* SceneDelegate.swift */,
 				0254A4582992904600C14B17 /* BudgetCategoriesTableViewController.swift */,
 				0254A46B2992973400C14B17 /* AddBudgetCategoryViewController.swift */,
+				0254A46D29929F5500C14B17 /* String+Extensions.swift */,
 				0254A45D2992904700C14B17 /* Assets.xcassets */,
 				0254A45F2992904700C14B17 /* LaunchScreen.storyboard */,
 				0254A4622992904700C14B17 /* Info.plist */,
@@ -144,6 +147,7 @@
 				0254A4592992904600C14B17 /* BudgetCategoriesTableViewController.swift in Sources */,
 				0254A4552992904600C14B17 /* AppDelegate.swift in Sources */,
 				0254A46C2992973400C14B17 /* AddBudgetCategoryViewController.swift in Sources */,
+				0254A46E29929F5500C14B17 /* String+Extensions.swift in Sources */,
 				0254A4572992904600C14B17 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
