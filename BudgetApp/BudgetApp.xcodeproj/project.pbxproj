@@ -15,6 +15,13 @@
 		0254A46A2992919700C14B17 /* BudgetModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0254A4682992919700C14B17 /* BudgetModel.xcdatamodeld */; };
 		0254A46C2992973400C14B17 /* AddBudgetCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254A46B2992973400C14B17 /* AddBudgetCategoryViewController.swift */; };
 		0254A46E29929F5500C14B17 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254A46D29929F5500C14B17 /* String+Extensions.swift */; };
+		0263DC5D2993343200A5A858 /* BudgetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0263DC5C2993343200A5A858 /* BudgetDetailViewController.swift */; };
+		0263DC5F29933B6C00A5A858 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0263DC5E29933B6C00A5A858 /* Double+Extension.swift */; };
+		0272EEDF29946D4F0049EFB4 /* BudgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272EEDE29946D4F0049EFB4 /* BudgetTableViewCell.swift */; };
+		0272EEE129946D6E0049EFB4 /* BudgetTableViewCellReapresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272EEE029946D6E0049EFB4 /* BudgetTableViewCellReapresentable.swift */; };
+		0272EEE3299476580049EFB4 /* BudgetCategory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272EEE2299476580049EFB4 /* BudgetCategory+CoreDataClass.swift */; };
+		0272EEE5299477330049EFB4 /* NSSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272EEE4299477330049EFB4 /* NSSet+Extensions.swift */; };
+		0272EEE729947AFA0049EFB4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272EEE629947AFA0049EFB4 /* UIViewController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		0254A4692992919700C14B17 /* BudgetModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetModel.xcdatamodel; sourceTree = "<group>"; };
 		0254A46B2992973400C14B17 /* AddBudgetCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBudgetCategoryViewController.swift; sourceTree = "<group>"; };
 		0254A46D29929F5500C14B17 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		0263DC5C2993343200A5A858 /* BudgetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetDetailViewController.swift; sourceTree = "<group>"; };
+		0263DC5E29933B6C00A5A858 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		0272EEDE29946D4F0049EFB4 /* BudgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCell.swift; sourceTree = "<group>"; };
+		0272EEE029946D6E0049EFB4 /* BudgetTableViewCellReapresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetTableViewCellReapresentable.swift; sourceTree = "<group>"; };
+		0272EEE2299476580049EFB4 /* BudgetCategory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BudgetCategory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0272EEE4299477330049EFB4 /* NSSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Extensions.swift"; sourceTree = "<group>"; };
+		0272EEE629947AFA0049EFB4 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +77,19 @@
 				0254A4542992904600C14B17 /* AppDelegate.swift */,
 				0254A4562992904600C14B17 /* SceneDelegate.swift */,
 				0254A4582992904600C14B17 /* BudgetCategoriesTableViewController.swift */,
+				0263DC5C2993343200A5A858 /* BudgetDetailViewController.swift */,
 				0254A46B2992973400C14B17 /* AddBudgetCategoryViewController.swift */,
 				0254A46D29929F5500C14B17 /* String+Extensions.swift */,
+				0263DC5E29933B6C00A5A858 /* Double+Extension.swift */,
+				0272EEE4299477330049EFB4 /* NSSet+Extensions.swift */,
+				0272EEE629947AFA0049EFB4 /* UIViewController+Extensions.swift */,
 				0254A45D2992904700C14B17 /* Assets.xcassets */,
 				0254A45F2992904700C14B17 /* LaunchScreen.storyboard */,
 				0254A4622992904700C14B17 /* Info.plist */,
 				0254A4682992919700C14B17 /* BudgetModel.xcdatamodeld */,
+				0272EEDE29946D4F0049EFB4 /* BudgetTableViewCell.swift */,
+				0272EEE029946D6E0049EFB4 /* BudgetTableViewCellReapresentable.swift */,
+				0272EEE2299476580049EFB4 /* BudgetCategory+CoreDataClass.swift */,
 			);
 			path = BudgetApp;
 			sourceTree = "<group>";
@@ -144,11 +165,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0254A46A2992919700C14B17 /* BudgetModel.xcdatamodeld in Sources */,
+				0272EEE5299477330049EFB4 /* NSSet+Extensions.swift in Sources */,
+				0272EEE729947AFA0049EFB4 /* UIViewController+Extensions.swift in Sources */,
 				0254A4592992904600C14B17 /* BudgetCategoriesTableViewController.swift in Sources */,
+				0272EEE3299476580049EFB4 /* BudgetCategory+CoreDataClass.swift in Sources */,
 				0254A4552992904600C14B17 /* AppDelegate.swift in Sources */,
+				0272EEE129946D6E0049EFB4 /* BudgetTableViewCellReapresentable.swift in Sources */,
 				0254A46C2992973400C14B17 /* AddBudgetCategoryViewController.swift in Sources */,
+				0263DC5F29933B6C00A5A858 /* Double+Extension.swift in Sources */,
 				0254A46E29929F5500C14B17 /* String+Extensions.swift in Sources */,
 				0254A4572992904600C14B17 /* SceneDelegate.swift in Sources */,
+				0263DC5D2993343200A5A858 /* BudgetDetailViewController.swift in Sources */,
+				0272EEDF29946D4F0049EFB4 /* BudgetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

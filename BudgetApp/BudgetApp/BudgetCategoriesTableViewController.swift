@@ -17,6 +17,7 @@ class BudgetCategoriesTableViewController: UITableViewController {
             try fetchedResultsController.performFetch()
         } catch {
             print(error.localizedDescription)
+            showAlert(title: "Error", message: "Unable to delete budget category.")
         }
     }
     
@@ -30,7 +31,7 @@ class BudgetCategoriesTableViewController: UITableViewController {
     }
 
     private func setupUI() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BudgetTableViewCell")
+        tableView.register(BudgetTableViewCell.self, forCellReuseIdentifier: "BudgetTableViewCell")
         let addBudgetCategoryButton = UIBarButtonItem(
             title: "Add Category",
             style: .done,
@@ -39,6 +40,17 @@ class BudgetCategoriesTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = addBudgetCategoryButton
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Budget"
+    }
+    
+    private func deleteBudgetCategory(_ budgetCategory: BudgetCategory) {
+        
+        persistentContainer.viewContext.delete(budgetCategory)
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            // show an alert
+            print(error.localizedDescription)
+        }
     }
 
     @objc func showAddBudgetCategory(_ sender: UIBarButtonItem) {
@@ -52,12 +64,23 @@ class BudgetCategoriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BudgetTableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BudgetTableViewCell", for: indexPath) as? BudgetTableViewCell else { return UITableViewCell()}
+        cell.accessoryType = .disclosureIndicator
         let budget = fetchedResultsController.object(at: indexPath)
-        var configuration = cell.defaultContentConfiguration()
-        configuration.text = budget.name
-        cell.contentConfiguration = configuration
+        cell.configure(budget)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let budgetCategory = fetchedResultsController.object(at: indexPath)
+        self.navigationController?.pushViewController(BudgetDetailViewController(persistentContainer: persistentContainer, budgetCategory: budgetCategory), animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let budgetCategory = fetchedResultsController.object(at: indexPath)
+            deleteBudgetCategory(budgetCategory)
+        }
     }
 }
 
