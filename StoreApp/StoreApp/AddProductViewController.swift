@@ -1,11 +1,31 @@
 import SwiftUI
 
+enum AddProductTextFieldType: Int {
+    case title
+    case price
+    case imageUrl
+}
+
+struct AddProductFormState {
+    var title = false
+    var price = false
+    var imageUrl = false
+    var description = false
+    var isValid: Bool {
+        title && price && imageUrl && description
+    }
+}
+
 final class AddProductViewController: UIViewController {
+    var addProductFormState = AddProductFormState()
+    
     lazy var titleTextField = UITextField().then {
         $0.placeholder = "Enter title"
         $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         $0.leftViewMode = .always
         $0.borderStyle = .roundedRect
+        $0.tag = AddProductTextFieldType.title.rawValue
+        $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
     lazy var priceTextField = UITextField().then {
@@ -14,6 +34,8 @@ final class AddProductViewController: UIViewController {
         $0.leftViewMode = .always
         $0.borderStyle = .roundedRect
         $0.keyboardType = .numberPad
+        $0.tag = AddProductTextFieldType.price.rawValue
+        $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
     lazy var imageURLTextField = UITextField().then {
@@ -21,11 +43,14 @@ final class AddProductViewController: UIViewController {
         $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         $0.leftViewMode = .always
         $0.borderStyle = .roundedRect
+        $0.tag = AddProductTextFieldType.imageUrl.rawValue
+        $0.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
     lazy var descriptionTextView = UITextView().then {
         $0.contentInsetAdjustmentBehavior = .automatic
         $0.backgroundColor = .lightGray
+        $0.delegate = self
     }
     
     var selectedCatergory: Category?
@@ -51,9 +76,38 @@ final class AddProductViewController: UIViewController {
         $0.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
     }
     
+    lazy var cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPressed))
+    
+    lazy var saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonPressed)).then {
+        $0.isEnabled = false
+    }
+    
+    @objc func saveButtonPressed(_ sender: UIBarButtonItem) {
+        print("DEBUG: \(#function)")
+    }
+    
+    @objc func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        print("DEBUG: \(#function)")
+    }
+    
+    @objc func textFieldDidChange(_ sender: UITextField) {
+        guard let text = sender.text else { return }
+        guard let type = AddProductTextFieldType(rawValue: sender.tag) else { return }
+        switch type {
+        case .title:
+            addProductFormState.title = !text.isEmpty
+        case .price:
+            addProductFormState.price = Double(text) != nil
+        case .imageUrl:
+            addProductFormState.imageUrl = !text.isEmpty
+        }
+        print(text)
+        print(addProductFormState)
+        saveBarButtonItem.isEnabled = addProductFormState.isValid
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
         setupViews()
         layoutViews()
         configureAppearance()
@@ -61,11 +115,11 @@ final class AddProductViewController: UIViewController {
 }
 
 struct AddProductViewControllerRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> AddProductViewController {
-        AddProductViewController()
+    func makeUIViewController(context: Context) -> some UIViewController {
+        UINavigationController(rootViewController: AddProductViewController())
     }
     
-    func updateUIViewController(_ uiViewController: AddProductViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         
     }
 }
@@ -97,5 +151,16 @@ extension AddProductViewController {
     }
     
     func configureAppearance() {
+        title = "Add"
+        view.backgroundColor = .systemBackground
+        navigationItem.leftBarButtonItem = cancelBarButtonItem
+        navigationItem.rightBarButtonItem = saveBarButtonItem
+    }
+}
+
+extension AddProductViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        addProductFormState.description = !textView.text.isEmpty
+        saveBarButtonItem.isEnabled = addProductFormState.isValid
     }
 }
