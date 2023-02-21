@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02074E192997247A0049B917 /* ProductDetatilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02074E182997247A0049B917 /* ProductDetatilViewController.swift */; };
+		02074E1B29972E290049B917 /* ProductCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02074E1A29972E290049B917 /* ProductCellView.swift */; };
 		024FA5612995BE1C00C8F072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA5602995BE1C00C8F072 /* AppDelegate.swift */; };
 		024FA5632995BE1C00C8F072 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA5622995BE1C00C8F072 /* SceneDelegate.swift */; };
 		024FA5652995BE1C00C8F072 /* CategoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA5642995BE1C00C8F072 /* CategoresTableViewController.swift */; };
@@ -15,10 +17,17 @@
 		024FA5772995BFA400C8F072 /* StoreHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA5762995BFA400C8F072 /* StoreHTTPClient.swift */; };
 		024FA5792995C00B00C8F072 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA5782995C00B00C8F072 /* Category.swift */; };
 		024FA57B2995C28600C8F072 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA57A2995C28500C8F072 /* URL+Extensions.swift */; };
+		026686F52996B977003C5B1F /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026686F42996B977003C5B1F /* ProductTableViewController.swift */; };
+		027C400329A4409300880566 /* Local+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C400229A4409300880566 /* Local+Extensions.swift */; };
+		027C400529A443A200880566 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C400429A443A200880566 /* Then.swift */; };
+		027C400729A444D500880566 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C400629A444D500880566 /* AddProductViewController.swift */; };
+		027C400929A44D8600880566 /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C400829A44D8600880566 /* CategoryPickerView.swift */; };
 		02AA7F472995CE8200BCD5FF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA7F462995CE8200BCD5FF /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02074E182997247A0049B917 /* ProductDetatilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetatilViewController.swift; sourceTree = "<group>"; };
+		02074E1A29972E290049B917 /* ProductCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellView.swift; sourceTree = "<group>"; };
 		024FA55D2995BE1C00C8F072 /* StoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		024FA5602995BE1C00C8F072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		024FA5622995BE1C00C8F072 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +39,11 @@
 		024FA5762995BFA400C8F072 /* StoreHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreHTTPClient.swift; sourceTree = "<group>"; };
 		024FA5782995C00B00C8F072 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		024FA57A2995C28500C8F072 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
+		026686F42996B977003C5B1F /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		027C400229A4409300880566 /* Local+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Local+Extensions.swift"; sourceTree = "<group>"; };
+		027C400429A443A200880566 /* Then.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
+		027C400629A444D500880566 /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		027C400829A44D8600880566 /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
 		02AA7F462995CE8200BCD5FF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +82,11 @@
 				024FA5602995BE1C00C8F072 /* AppDelegate.swift */,
 				024FA5622995BE1C00C8F072 /* SceneDelegate.swift */,
 				024FA5642995BE1C00C8F072 /* CategoresTableViewController.swift */,
+				026686F42996B977003C5B1F /* ProductTableViewController.swift */,
+				027C400629A444D500880566 /* AddProductViewController.swift */,
+				02074E182997247A0049B917 /* ProductDetatilViewController.swift */,
+				02074E1A29972E290049B917 /* ProductCellView.swift */,
+				027C400829A44D8600880566 /* CategoryPickerView.swift */,
 				024FA5692995BE1D00C8F072 /* Assets.xcassets */,
 				024FA56B2995BE1D00C8F072 /* LaunchScreen.storyboard */,
 				024FA56E2995BE1D00C8F072 /* Info.plist */,
@@ -75,6 +94,8 @@
 				024FA5782995C00B00C8F072 /* Category.swift */,
 				02AA7F462995CE8200BCD5FF /* Product.swift */,
 				024FA57A2995C28500C8F072 /* URL+Extensions.swift */,
+				027C400229A4409300880566 /* Local+Extensions.swift */,
+				027C400429A443A200880566 /* Then.swift */,
 			);
 			path = StoreApp;
 			sourceTree = "<group>";
@@ -160,8 +181,15 @@
 				024FA57B2995C28600C8F072 /* URL+Extensions.swift in Sources */,
 				024FA5792995C00B00C8F072 /* Category.swift in Sources */,
 				024FA5652995BE1C00C8F072 /* CategoresTableViewController.swift in Sources */,
+				027C400529A443A200880566 /* Then.swift in Sources */,
+				02074E1B29972E290049B917 /* ProductCellView.swift in Sources */,
+				02074E192997247A0049B917 /* ProductDetatilViewController.swift in Sources */,
+				027C400329A4409300880566 /* Local+Extensions.swift in Sources */,
 				024FA5612995BE1C00C8F072 /* AppDelegate.swift in Sources */,
+				027C400729A444D500880566 /* AddProductViewController.swift in Sources */,
 				024FA5632995BE1C00C8F072 /* SceneDelegate.swift in Sources */,
+				026686F52996B977003C5B1F /* ProductTableViewController.swift in Sources */,
+				027C400929A44D8600880566 /* CategoryPickerView.swift in Sources */,
 				02AA7F472995CE8200BCD5FF /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

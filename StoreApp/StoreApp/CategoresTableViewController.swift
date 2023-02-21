@@ -47,5 +47,11 @@ class CategoresTableViewController: UITableViewController {
         }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = categories[indexPath.row]
+        let controller = ProductTableViewController(category: category)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
