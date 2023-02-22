@@ -28,6 +28,7 @@ class ProductTableViewController: UITableViewController {
     
     @objc func addProductButtonPressed(_ sender: UIBarButtonItem) {
         let controller = AddProductViewController()
+        controller.delegate = self
         present(UINavigationController(rootViewController: controller), animated: true)
     }
     private func populateProducts() async {
@@ -47,6 +48,7 @@ class ProductTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
+        cell.accessoryType = .disclosureIndicator
         let product = products[indexPath.row]
         cell.contentConfiguration = UIHostingConfiguration {
             ProductCellView(product: product)
@@ -55,7 +57,28 @@ class ProductTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewcontroller = ProductDetatilViewController()
+        let product = products[indexPath.row]
+        let viewcontroller = ProductDetatilViewController(product: product)
         self.navigationController?.pushViewController(viewcontroller, animated: true)
     }
+}
+
+extension ProductTableViewController: AddProductViewControllerDelegate {
+    func addProductViewControllerDidCancel(_ controller: AddProductViewController) {
+        controller.dismiss(animated: true)
+    }
+    
+    func addProductViewControllerDidSave(_ controller: AddProductViewController, with product: Product) {
+        let createProductRequest = CreateProductRequest(product: product)
+        Task {
+            do {
+                let result = try await client.createProduct(with: createProductRequest)
+                products.insert(result, at: 0)
+                tableView.reloadData()
+                controller.dismiss(animated: true)
+            } catch  { print("DEBUG: \(error.localizedDescription)")}
+        }
+    }
+    
+    
 }
