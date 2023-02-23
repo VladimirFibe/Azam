@@ -57,7 +57,8 @@ class ProductDetatilViewController: UIViewController {
             do {
                 if let productId = product.id {
                     let _ = try await client.deletetProduct(productId: productId)
-                    navigationController?.popViewController(animated: true)
+                    showMessage(title: "Yes", message: "Deleted", messageType: .success)
+//                    navigationController?.popViewController(animated: true)
                 }
             } catch {
                 showAlert(title: "Error", message: "Unable to delete the product")
