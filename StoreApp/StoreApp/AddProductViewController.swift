@@ -16,9 +16,14 @@ struct AddProductFormState {
     }
 }
 
+protocol AddProductViewControllerDelegate {
+    func addProductViewControllerDidCancel(_ controller: AddProductViewController)
+    func addProductViewControllerDidSave(_ controller: AddProductViewController, with product: Product)
+}
+
 final class AddProductViewController: UIViewController {
     var addProductFormState = AddProductFormState()
-    
+    var delegate: AddProductViewControllerDelegate?
     lazy var titleTextField = UITextField().then {
         $0.placeholder = "Enter title"
         $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -56,7 +61,6 @@ final class AddProductViewController: UIViewController {
     var selectedCatergory: Category?
     
     lazy var categoryPickerView = CategoryPickerView { [weak self] category in
-        print(category)
         self?.selectedCatergory = category
     }
     
@@ -82,12 +86,22 @@ final class AddProductViewController: UIViewController {
         $0.isEnabled = false
     }
     
+        
     @objc func saveButtonPressed(_ sender: UIBarButtonItem) {
-        print("DEBUG: \(#function)")
+        guard let title = titleTextField.text,
+              let text = priceTextField.text,
+              let price = Double(text),
+              let imageUrl = imageURLTextField.text,
+              let productImageUrl = URL(string: imageUrl),
+              let category = selectedCatergory,
+              let description = descriptionTextView.text
+        else { return }
+        let product = Product(id: nil, title: title, price: price, description: description, images: [productImageUrl], category: category)
+        delegate?.addProductViewControllerDidSave(self, with: product)
     }
     
     @objc func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        print("DEBUG: \(#function)")
+        delegate?.addProductViewControllerDidCancel(self)
     }
     
     @objc func textFieldDidChange(_ sender: UITextField) {
@@ -101,8 +115,6 @@ final class AddProductViewController: UIViewController {
         case .imageUrl:
             addProductFormState.imageUrl = !text.isEmpty
         }
-        print(text)
-        print(addProductFormState)
         saveBarButtonItem.isEnabled = addProductFormState.isValid
     }
     
