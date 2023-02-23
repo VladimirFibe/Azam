@@ -3,7 +3,7 @@ import SwiftUI
 class ProductDetatilViewController: UIViewController {
 
     let product: Product
-    
+    let client = StoreHTTPClient()
     lazy var descriptionLabel = UILabel().then {
         $0.numberOfLines = 0
         $0.lineBreakMode = .byWordWrapping
@@ -13,6 +13,7 @@ class ProductDetatilViewController: UIViewController {
     
     lazy var deleteProductButton = UIButton(type: .system).then {
         $0.setTitle("Delete", for: .normal)
+        $0.addTarget(self, action: #selector(deleteProductButtonPressed), for: .primaryActionTriggered)
     }
     
     lazy var loadingIndicatorView = UIActivityIndicatorView().then {
@@ -49,6 +50,19 @@ class ProductDetatilViewController: UIViewController {
     
     @objc func buttonTapped(_ sender: UIButton) {
         self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    @objc func deleteProductButtonPressed(_ sender: UIButton) {
+        Task {
+            do {
+                if let productId = product.id {
+                    let _ = try await client.deletetProduct(productId: productId)
+                    navigationController?.popViewController(animated: true)
+                }
+            } catch {
+                showAlert(title: "Error", message: "Unable to delete the product")
+            }
+        }
     }
 }
 

@@ -50,4 +50,14 @@ final class StoreHTTPClient {
         }
         return product
     }
+    
+    func deletetProduct(productId: Int) async throws -> Bool {
+        var request = URLRequest(url: URL.deletetProduct(productId))
+        request.httpMethod = "DELETE"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else { throw NetworkError.invalidResponse }
+        return try JSONDecoder().decode(Bool.self, from: data)
+    }
 }
