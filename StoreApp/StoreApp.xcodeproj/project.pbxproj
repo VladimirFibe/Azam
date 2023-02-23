@@ -27,6 +27,8 @@
 		027C400929A44D8600880566 /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027C400829A44D8600880566 /* CategoryPickerView.swift */; };
 		02AA7F472995CE8200BCD5FF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AA7F462995CE8200BCD5FF /* Product.swift */; };
 		02D7BC1829A5AD930078AC6C /* Double+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7BC1729A5AD930078AC6C /* Double+Extenstion.swift */; };
+		02EAF63229A71ACD006ECB3B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAF63129A71ACD006ECB3B /* UIViewController+Extension.swift */; };
+		02EAF63429A720ED006ECB3B /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EAF63329A720ED006ECB3B /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		027C400829A44D8600880566 /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
 		02AA7F462995CE8200BCD5FF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		02D7BC1729A5AD930078AC6C /* Double+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extenstion.swift"; sourceTree = "<group>"; };
+		02EAF63129A71ACD006ECB3B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		02EAF63329A720ED006ECB3B /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				027C400629A444D500880566 /* AddProductViewController.swift */,
 				02074E182997247A0049B917 /* ProductDetatilViewController.swift */,
 				02074E1A29972E290049B917 /* ProductCellView.swift */,
+				02EAF63329A720ED006ECB3B /* MessageView.swift */,
 				02681C6E29A5B2A3001ADCBD /* ProuductImageListView.swift */,
 				027C400829A44D8600880566 /* CategoryPickerView.swift */,
 				024FA5692995BE1D00C8F072 /* Assets.xcassets */,
@@ -107,6 +112,7 @@
 				024FA57A2995C28500C8F072 /* URL+Extensions.swift */,
 				027C400229A4409300880566 /* Local+Extensions.swift */,
 				02D7BC1729A5AD930078AC6C /* Double+Extenstion.swift */,
+				02EAF63129A71ACD006ECB3B /* UIViewController+Extension.swift */,
 				027C400429A443A200880566 /* Then.swift */,
 			);
 			path = StoreApp;
@@ -201,10 +207,12 @@
 				024FA57B2995C28600C8F072 /* URL+Extensions.swift in Sources */,
 				024FA5792995C00B00C8F072 /* Category.swift in Sources */,
 				02364EB029A513FE009C5FAB /* CreateProductRequest.swift in Sources */,
+				02EAF63429A720ED006ECB3B /* MessageView.swift in Sources */,
 				024FA5652995BE1C00C8F072 /* CategoresTableViewController.swift in Sources */,
 				027C400529A443A200880566 /* Then.swift in Sources */,
 				02681C6F29A5B2A3001ADCBD /* ProuductImageListView.swift in Sources */,
 				02074E1B29972E290049B917 /* ProductCellView.swift in Sources */,
+				02EAF63229A71ACD006ECB3B /* UIViewController+Extension.swift in Sources */,
 				02074E192997247A0049B917 /* ProductDetatilViewController.swift in Sources */,
 				027C400329A4409300880566 /* Local+Extensions.swift in Sources */,
 				02D7BC1829A5AD930078AC6C /* Double+Extenstion.swift in Sources */,

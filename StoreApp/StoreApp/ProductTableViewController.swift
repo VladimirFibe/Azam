@@ -12,6 +12,11 @@ class ProductTableViewController: UITableViewController {
         title = category.name
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ProductCell")
         navigationItem.rightBarButtonItem = addProductBarItemButton
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         Task {
             await populateProducts()
         }
