@@ -4,7 +4,7 @@ import SwiftUI
 struct HikeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HikeView()
         }
     }
 }

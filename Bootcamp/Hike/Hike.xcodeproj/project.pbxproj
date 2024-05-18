@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		E899172B2BF8F46A00FFB83C /* HikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899172A2BF8F46A00FFB83C /* HikeApp.swift */; };
-		E899172D2BF8F46A00FFB83C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899172C2BF8F46A00FFB83C /* ContentView.swift */; };
+		E899172D2BF8F46A00FFB83C /* HikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899172C2BF8F46A00FFB83C /* HikeView.swift */; };
 		E899172F2BF8F46B00FFB83C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E899172E2BF8F46B00FFB83C /* Assets.xcassets */; };
 		E89917322BF8F46B00FFB83C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89917312BF8F46B00FFB83C /* Preview Assets.xcassets */; };
+		E899173B2BF8F55B00FFB83C /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899173A2BF8F55B00FFB83C /* Hike.swift */; };
+		E899173D2BF9064C00FFB83C /* HikeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899173C2BF9064C00FFB83C /* HikeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E89917272BF8F46A00FFB83C /* Hike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E899172A2BF8F46A00FFB83C /* HikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeApp.swift; sourceTree = "<group>"; };
-		E899172C2BF8F46A00FFB83C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E899172C2BF8F46A00FFB83C /* HikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeView.swift; sourceTree = "<group>"; };
 		E899172E2BF8F46B00FFB83C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E89917312BF8F46B00FFB83C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E899173A2BF8F55B00FFB83C /* Hike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hike.swift; sourceTree = "<group>"; };
+		E899173C2BF9064C00FFB83C /* HikeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeDetailView.swift; sourceTree = "<group>"; };
+		E899173E2BF9091400FFB83C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E899173F2BF90D0900FFB83C /* Screenshot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot1.png; sourceTree = "<group>"; };
+		E89917402BF90D0900FFB83C /* Screenshot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +42,9 @@
 		E899171E2BF8F46900FFB83C = {
 			isa = PBXGroup;
 			children = (
+				E899173E2BF9091400FFB83C /* README.md */,
+				E899173F2BF90D0900FFB83C /* Screenshot1.png */,
+				E89917402BF90D0900FFB83C /* Screenshot2.png */,
 				E89917292BF8F46A00FFB83C /* Hike */,
 				E89917282BF8F46A00FFB83C /* Products */,
 			);
@@ -52,7 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				E899172A2BF8F46A00FFB83C /* HikeApp.swift */,
-				E899172C2BF8F46A00FFB83C /* ContentView.swift */,
+				E899173A2BF8F55B00FFB83C /* Hike.swift */,
+				E899172C2BF8F46A00FFB83C /* HikeView.swift */,
+				E899173C2BF9064C00FFB83C /* HikeDetailView.swift */,
 				E899172E2BF8F46B00FFB83C /* Assets.xcassets */,
 				E89917302BF8F46B00FFB83C /* Preview Content */,
 			);
@@ -137,7 +149,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E899172D2BF8F46A00FFB83C /* ContentView.swift in Sources */,
+				E899173B2BF8F55B00FFB83C /* Hike.swift in Sources */,
+				E899172D2BF8F46A00FFB83C /* HikeView.swift in Sources */,
+				E899173D2BF9064C00FFB83C /* HikeDetailView.swift in Sources */,
 				E899172B2BF8F46A00FFB83C /* HikeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
