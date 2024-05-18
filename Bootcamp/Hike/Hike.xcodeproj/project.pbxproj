@@ -7,24 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E89917112BF8E86500FFB83C /* HelloSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89917102BF8E86500FFB83C /* HelloSwiftUIApp.swift */; };
-		E89917132BF8E86500FFB83C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89917122BF8E86500FFB83C /* ContentView.swift */; };
-		E89917152BF8E86600FFB83C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89917142BF8E86600FFB83C /* Assets.xcassets */; };
-		E89917182BF8E86600FFB83C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89917172BF8E86600FFB83C /* Preview Assets.xcassets */; };
+		E899172B2BF8F46A00FFB83C /* HikeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899172A2BF8F46A00FFB83C /* HikeApp.swift */; };
+		E899172D2BF8F46A00FFB83C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899172C2BF8F46A00FFB83C /* ContentView.swift */; };
+		E899172F2BF8F46B00FFB83C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E899172E2BF8F46B00FFB83C /* Assets.xcassets */; };
+		E89917322BF8F46B00FFB83C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89917312BF8F46B00FFB83C /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E899170D2BF8E86500FFB83C /* HelloSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E89917102BF8E86500FFB83C /* HelloSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloSwiftUIApp.swift; sourceTree = "<group>"; };
-		E89917122BF8E86500FFB83C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E89917142BF8E86600FFB83C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E89917172BF8E86600FFB83C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E89917382BF8F4D800FFB83C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		E89917392BF8F4F600FFB83C /* Screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot.png; sourceTree = "<group>"; };
+		E89917272BF8F46A00FFB83C /* Hike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hike.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E899172A2BF8F46A00FFB83C /* HikeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeApp.swift; sourceTree = "<group>"; };
+		E899172C2BF8F46A00FFB83C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E899172E2BF8F46B00FFB83C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E89917312BF8F46B00FFB83C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E899170A2BF8E86500FFB83C /* Frameworks */ = {
+		E89917242BF8F46A00FFB83C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,39 +32,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E89917042BF8E86500FFB83C = {
+		E899171E2BF8F46900FFB83C = {
 			isa = PBXGroup;
 			children = (
-				E89917382BF8F4D800FFB83C /* README.md */,
-				E89917392BF8F4F600FFB83C /* Screenshot.png */,
-				E899170F2BF8E86500FFB83C /* HelloSwiftUI */,
-				E899170E2BF8E86500FFB83C /* Products */,
+				E89917292BF8F46A00FFB83C /* Hike */,
+				E89917282BF8F46A00FFB83C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E899170E2BF8E86500FFB83C /* Products */ = {
+		E89917282BF8F46A00FFB83C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E899170D2BF8E86500FFB83C /* HelloSwiftUI.app */,
+				E89917272BF8F46A00FFB83C /* Hike.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E899170F2BF8E86500FFB83C /* HelloSwiftUI */ = {
+		E89917292BF8F46A00FFB83C /* Hike */ = {
 			isa = PBXGroup;
 			children = (
-				E89917102BF8E86500FFB83C /* HelloSwiftUIApp.swift */,
-				E89917122BF8E86500FFB83C /* ContentView.swift */,
-				E89917142BF8E86600FFB83C /* Assets.xcassets */,
-				E89917162BF8E86600FFB83C /* Preview Content */,
+				E899172A2BF8F46A00FFB83C /* HikeApp.swift */,
+				E899172C2BF8F46A00FFB83C /* ContentView.swift */,
+				E899172E2BF8F46B00FFB83C /* Assets.xcassets */,
+				E89917302BF8F46B00FFB83C /* Preview Content */,
 			);
-			path = HelloSwiftUI;
+			path = Hike;
 			sourceTree = "<group>";
 		};
-		E89917162BF8E86600FFB83C /* Preview Content */ = {
+		E89917302BF8F46B00FFB83C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				E89917172BF8E86600FFB83C /* Preview Assets.xcassets */,
+				E89917312BF8F46B00FFB83C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -74,39 +70,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E899170C2BF8E86500FFB83C /* HelloSwiftUI */ = {
+		E89917262BF8F46A00FFB83C /* Hike */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E899171B2BF8E86600FFB83C /* Build configuration list for PBXNativeTarget "HelloSwiftUI" */;
+			buildConfigurationList = E89917352BF8F46B00FFB83C /* Build configuration list for PBXNativeTarget "Hike" */;
 			buildPhases = (
-				E89917092BF8E86500FFB83C /* Sources */,
-				E899170A2BF8E86500FFB83C /* Frameworks */,
-				E899170B2BF8E86500FFB83C /* Resources */,
+				E89917232BF8F46A00FFB83C /* Sources */,
+				E89917242BF8F46A00FFB83C /* Frameworks */,
+				E89917252BF8F46A00FFB83C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = HelloSwiftUI;
-			productName = HelloSwiftUI;
-			productReference = E899170D2BF8E86500FFB83C /* HelloSwiftUI.app */;
+			name = Hike;
+			productName = Hike;
+			productReference = E89917272BF8F46A00FFB83C /* Hike.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E89917052BF8E86500FFB83C /* Project object */ = {
+		E899171F2BF8F46900FFB83C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					E899170C2BF8E86500FFB83C = {
+					E89917262BF8F46A00FFB83C = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = E89917082BF8E86500FFB83C /* Build configuration list for PBXProject "HelloSwiftUI" */;
+			buildConfigurationList = E89917222BF8F46900FFB83C /* Build configuration list for PBXProject "Hike" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,42 +110,42 @@
 				en,
 				Base,
 			);
-			mainGroup = E89917042BF8E86500FFB83C;
-			productRefGroup = E899170E2BF8E86500FFB83C /* Products */;
+			mainGroup = E899171E2BF8F46900FFB83C;
+			productRefGroup = E89917282BF8F46A00FFB83C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E899170C2BF8E86500FFB83C /* HelloSwiftUI */,
+				E89917262BF8F46A00FFB83C /* Hike */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E899170B2BF8E86500FFB83C /* Resources */ = {
+		E89917252BF8F46A00FFB83C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E89917182BF8E86600FFB83C /* Preview Assets.xcassets in Resources */,
-				E89917152BF8E86600FFB83C /* Assets.xcassets in Resources */,
+				E89917322BF8F46B00FFB83C /* Preview Assets.xcassets in Resources */,
+				E899172F2BF8F46B00FFB83C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E89917092BF8E86500FFB83C /* Sources */ = {
+		E89917232BF8F46A00FFB83C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E89917132BF8E86500FFB83C /* ContentView.swift in Sources */,
-				E89917112BF8E86500FFB83C /* HelloSwiftUIApp.swift in Sources */,
+				E899172D2BF8F46A00FFB83C /* ContentView.swift in Sources */,
+				E899172B2BF8F46A00FFB83C /* HikeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		E89917192BF8E86600FFB83C /* Debug */ = {
+		E89917332BF8F46B00FFB83C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -212,7 +208,7 @@
 			};
 			name = Debug;
 		};
-		E899171A2BF8E86600FFB83C /* Release */ = {
+		E89917342BF8F46B00FFB83C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -268,14 +264,14 @@
 			};
 			name = Release;
 		};
-		E899171C2BF8E86600FFB83C /* Debug */ = {
+		E89917362BF8F46B00FFB83C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HelloSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Hike/Preview Content\"";
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -289,7 +285,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.fibeapp.HelloSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.fibeapp.Hike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -297,14 +293,14 @@
 			};
 			name = Debug;
 		};
-		E899171D2BF8E86600FFB83C /* Release */ = {
+		E89917372BF8F46B00FFB83C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"HelloSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Hike/Preview Content\"";
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -318,7 +314,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.fibeapp.HelloSwiftUI;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.fibeapp.Hike;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -329,25 +325,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E89917082BF8E86500FFB83C /* Build configuration list for PBXProject "HelloSwiftUI" */ = {
+		E89917222BF8F46900FFB83C /* Build configuration list for PBXProject "Hike" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E89917192BF8E86600FFB83C /* Debug */,
-				E899171A2BF8E86600FFB83C /* Release */,
+				E89917332BF8F46B00FFB83C /* Debug */,
+				E89917342BF8F46B00FFB83C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E899171B2BF8E86600FFB83C /* Build configuration list for PBXNativeTarget "HelloSwiftUI" */ = {
+		E89917352BF8F46B00FFB83C /* Build configuration list for PBXNativeTarget "Hike" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E899171C2BF8E86600FFB83C /* Debug */,
-				E899171D2BF8E86600FFB83C /* Release */,
+				E89917362BF8F46B00FFB83C /* Debug */,
+				E89917372BF8F46B00FFB83C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E89917052BF8E86500FFB83C /* Project object */;
+	rootObject = E899171F2BF8F46900FFB83C /* Project object */;
 }
