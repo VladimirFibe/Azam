@@ -1,7 +1,7 @@
 #  Weather
 
-[Current Weather Data](https://openweathermap.org/current)
-[Geocoder API](https://openweathermap.org/api/geocoding-api)
+- [Current Weather Data](https://openweathermap.org/current)
+- [Geocoder API](https://openweathermap.org/api/geocoding-api)
 
 ![](Screenshot.png)
 ```
