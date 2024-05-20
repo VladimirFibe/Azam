@@ -1,5 +1,8 @@
 #  Weather
 
+[Current Weather Data](https://openweathermap.org/current)
+[Geocoder API](https://openweathermap.org/api/geocoding-api)
+
 ![](Screenshot.png)
 ```
 extension MeasurementFormatter {
